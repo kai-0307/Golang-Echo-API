@@ -1,0 +1,13 @@
+version: '3.9'
+services:
+  app:
+    build:
+      context: .
+      target: dev
+      dockerfile: Dockerfile
+    tty: true
+    container_name: go-echo-api
+    volumes:
+      - ./:/go/src/app
+    ports:
+      - 1234:1234
